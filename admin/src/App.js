@@ -25,9 +25,9 @@ function App() {
     return (
       <QueryClientProvider client={queryClient}>
         <div className={`theme-${darkMode ? "dark" : "light"}`}>
-          <Navbar />
+          {/* <Navbar /> */}
           <div style={{ display: "flex" }}>
-            <Sidebar />
+            {/* <Sidebar /> */}
             <div style={{ flex: 6 }}>
               <Outlet />
             </div>
@@ -64,8 +64,12 @@ function App() {
           element: <Single />,
         },
         {
-          path: "/user",
+          path: "/users",
           element: <List inputs={userInputs} title="Users" />,
+        },
+        {
+          path: "users/new",
+          element: <New inputs={productInputs} title="Add New Product"/>,
         },
         {
           path: "/product/:id",
